@@ -3,11 +3,11 @@
 /*  Insert SQL database location */
 $host = "localhost";
 /* Insert database user */
-$user = "pajara_peeranat";
+$user = "robot";
 /* Insert database password */
-$pass = "prn2543";
+$pass = "Sudarat";
 /* Insert database name */
-$db = "pajara_peeranat";
+$db = "robot_boat";
 mysql_connect($host, $user, $pass) or die("Could not connect to database");
 mysql_select_db($db) or die("Could not connect to database");
 mysql_query("SET NAMES utf8");
@@ -23,8 +23,5 @@ $yl = ($_POST['DO']);
 
 $sql = "INSERT INTO boat VALUES ( $pH , $DO, $Tur,$latitude,$longitude,$xl,$yl,'$ddate' )";
 $result=mysql_query($sql);
-
-echo" $pH";
-
 
 ?>
