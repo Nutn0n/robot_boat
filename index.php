@@ -1,5 +1,9 @@
 <html>
-<head>Hello, world!</head>
+<head>
+  
+  <title>Hello, world!</title>
+    
+</head>
 
 <body>
 
@@ -39,7 +43,7 @@ $result=mysql_query($sql);
   
 <p>
   
- <php?   
+<?php   
 echo 'Hello, world!';
 echo $pH ;
 echo $DO;
@@ -48,9 +52,9 @@ echo $latitude ;
 echo $longitude;
 echo $xl;
 echo $yl;     
- ?>
+?>
   
-  </p>
+ </p>
  
 
 </body>
