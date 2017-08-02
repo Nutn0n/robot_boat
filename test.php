@@ -41,7 +41,6 @@ $result=mysql_query($sql);
 
 <?php
 echo "Hello World!";
-echo $pH; 
 ?>
   
   
