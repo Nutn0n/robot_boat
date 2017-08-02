@@ -22,6 +22,7 @@ $xl= ($_POST['pH']);
 $yl = ($_POST['DO']);
 
 $sql = "INSERT INTO boat VALUES ( $pH , $DO, $Tur,$latitude,$longitude,$xl,$yl,'$ddate' )";
+<<<<<<< HEAD:index.php
 $result=mysql_query($sql);
 
 echo "Hello, world!”;
@@ -32,5 +33,8 @@ echo $latitude ;
 echo $longitude;
 echo $xl;
 echo $yl;
+=======
+$result=mysql_query($sql);
+>>>>>>> master:data.php
 
 ?>
