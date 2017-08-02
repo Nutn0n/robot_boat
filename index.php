@@ -1,3 +1,8 @@
+<html>
+<head>Hello, world!</head>
+
+<body>
+
 <?php
 
 /*  Insert SQL database location */
@@ -25,16 +30,28 @@ $sql = "INSERT INTO boat VALUES ( $pH , $DO, $Tur,$latitude,$longitude,$xl,$yl,'
 <<<<<<< HEAD:index.php
 $result=mysql_query($sql);
 
-echo "Hello, world!”;
+=======
+$result=mysql_query($sql);
+>>>>>>> master:data.php
+
+?>
+  
+  
+<p>
+  
+ <php?   
+echo 'Hello, world!';
 echo $pH ;
 echo $DO;
 echo $Tur ;
 echo $latitude ;
 echo $longitude;
 echo $xl;
-echo $yl;
-=======
-$result=mysql_query($sql);
->>>>>>> master:data.php
+echo $yl;     
+ ?>
+  
+  </p>
+ 
 
-?>
+</body>
+</html>
