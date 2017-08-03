@@ -7,6 +7,11 @@
 </head>
 
 <body>
+  
+  <---
+       
+       Please check here. 
+       I don't think this code is working. 
 
 <?php
 
@@ -40,6 +45,8 @@ $result=mysql_query($sql);
 >>>>>>> master:data.php
 
 ?>
+       
+       --->
   
   
 <p>
