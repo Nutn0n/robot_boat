@@ -1,0 +1,66 @@
+/* Designed by Nattanon */
+
+body {
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-color: #0F0F0F;
+}
+
+.wrapper {
+  padding: 5%;
+  text-align: center;
+}
+
+.module {
+  margin: 10px;
+  display: inline-block;
+  background-color: #141414;
+  width: 350px;
+  height: 350px;
+   transition: .05s ease-in;
+}
+
+.module:hover {
+  transform: scale(1.04) translateY(-5px);
+   transition: .05s ease-in;
+}
+
+.module-title {
+  z-index: 11;
+  position: absolute;
+  margin-left: 30px;
+}
+
+.module-title p {
+  color:#999999;
+  text-align: left;
+}
+
+iframe {
+  overflow: hidden;
+}
+
+.module-graph {
+  margin: 80px 3px 50px 0;
+  width: 100%;
+  height: 65%;
+  background-size:100px 100px;
+  background-image:       linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+}
+
+.module-maps {
+display: block;
+position: absolute;
+overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 35px;
+}
