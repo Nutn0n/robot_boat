@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Boat Data</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
   <body>
 
@@ -21,10 +22,20 @@
 
   <section class="module nav">
     <div class="module-title"><h1>Navigation</h1>
-    <p>Lorem ipsum dolor sit amet
-      <br/>consectetur adipiscing elit.
+    <p>Latitude
+      <br/>Longitude
     </p>
-    
+    <p>
+      <input placeholder="Latitude" class="location-input" type="text">
+    </input>
+      <br/>
+    <input  placeholder="Longitude" class="location-input"  type="text">
+  </input>
+      <p>
+        <p>
+      <button class="init-button"><span class="ion-navigate"></span> Initiate</button>
+        </p>
+
     </div>
   </section>
 
@@ -36,24 +47,37 @@
   <section class="module ph">
     <div class="module-title"><h1>pH</h1></div>
     <div class="module-graph">
+      <svg viewBox="0 0 500 100" class="chart">    <polyline     fill="none"     stroke="#fff"     stroke-width="2"     points="       00,50       20,50       40,50       60,50       80,50       100,50       120,50       140,50       160,50       180,50       200, 50       220, 50       240, 50       260, 50       280, 50       300, 50       320, 50       340, 50"   />  </svg>
     </div>
   </section>
 
   <section class="module do">
     <div class="module-title"><h1>Oxygen</h1></div>
     <div class="module-graph">
+      <svg viewBox="0 0 500 100" class="chart">    <polyline     fill="none"     stroke="#fff"     stroke-width="2"     points="       00,50       20,50       40,50       60,50       80,50       100,50       120,50       140,50       160,50       180,50       200, 50       220, 50       240, 50       260, 50       280, 50       300, 50       320, 50       340, 50"   />  </svg>
     </div>
   </section>
 
   <section class="module tur">
     <div class="module-title"><h1>Turbidity</h1></div>
     <div class="module-graph">
+      <svg viewBox="0 0 500 100" class="chart">    <polyline     fill="none"     stroke="#fff"     stroke-width="2"     points="       00,50       20,50       40,50       60,50       80,50       100,50       120,50       140,50       160,50       180,50       200, 50       220, 50       240, 50       260, 50       280, 50       300, 50       320, 50       340, 50"   />  </svg>
     </div>
   </section>
 
   <section class="module warn">
-    <div class="module-title"><h1>Warning</h1></div>
-
+    <div class="module-title-module"><h1>Warning</h1></div>
+<div class="overflow-wrapper">
+   <div class="module-scroll">
+    <p class="warn-topic">111222 333333 <strong>time</strong></p>
+    <p class="warn-topic">111222 333333 <strong>time</strong></p>
+    <p class="warn-topic">111222 333333 <strong>time</strong></p>
+    <p class="warn-topic">111222 333333 <strong>time</strong></p>
+    <p class="warn-topic">111222 333333 <strong>time</strong></p>
+        <p class="warn-topic">111222 333333 <strong>time</strong></p>
+            <p class="warn-topic">111222 333333 <strong>time</strong></p>
+  </div>
+</div>
   </section>
 
   <section class="module video">
@@ -62,6 +86,16 @@
 
   <section class="module ctrl">
     <div class="module-title"><h1>Control</h1></div>
+
+    <nav class="control">
+    <ul>
+      <li><a href="#">▲</a></li>
+      <li><a href="#">▲</a></li>
+      <li><a href="#">▲</a></li>
+      <li><a href="#">▲</a></li>
+    </ul>
+    <a class="confirm" href="#">OK</a>
+  </nav>
 
   </section>
   </div>
