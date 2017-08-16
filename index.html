@@ -33,7 +33,7 @@
   </input>
       <p>
         <p>
-      <button class="init-button"><span class="ion-navigate"></span> Initiate</button>
+      <button onclick="sendLocation()" class="init-button"><span class="ion-navigate"></span> Initiate</button>
         </p>
 
     </div>
@@ -89,16 +89,18 @@
 
     <nav class="control">
     <ul>
-      <li><a href="#">▲</a></li>
-      <li><a href="#">▲</a></li>
-      <li><a href="#">▲</a></li>
-      <li><a href="#">▲</a></li>
+      <li><a onmousedown="goFoward()" onmouseup="resetVariable()">▲</a></li> <!--  w --->
+      <li><a onmousedown="goRight()" onmouseup="resetVariable()">▲</a></li> <!--  d --->
+      <li><a onmousedown="goLeft()" onmouseup="resetVariable()">▲</a></li> <!--  a --->
+      <li><a onmousedown="goBackward()" onmouseup="resetVariable()">▲</a></li> <!--  s --->
     </ul>
     <a class="confirm" href="#">OK</a>
   </nav>
 
   </section>
   </div>
+
+  <script src="script.js"></script>
 
   </body>
 </html>
