@@ -178,6 +178,7 @@ h1 {
 .control a:hover,
 .control a:focus {
   background-color: hsla(0,0%,100%,.25);
+  cursor: pointer;
 }
 
 .control a {
@@ -192,8 +193,8 @@ h1 {
 
 
 .control .confirm {
-  background-color: #ddd;
-  background-image: linear-gradient(hsla(0,0%,0%,.15), hsla(0,0%,100%,.25));
+  background-color: #141414;
+  color: #fff;
   left: 50%;
   line-height: 3;
   margin: -1.5em;
@@ -203,5 +204,31 @@ h1 {
 }
 .control .confirm:hover,
 .control .confirm:focus {
-  background-color: #eee;
+  background-color: #101010;
+  cursor: pointer;
+}
+
+.status-button {
+  width: 120px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  margin-top: 40px;
+  transform: translateX(20px);
+}
+
+
+.status-button a {
+font-size: 20px;
+margin-left: 5px;
+color: #fff;
+font-weight: 300;
+}
+
+.status-button a:hover {
+font-size: 20px;
+margin-left: 5px;
+color: #999999;
+font-weight: 300;
+cursor: pointer;
 }

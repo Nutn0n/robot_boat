@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
-  <body>
+<body>
 
   <div class="wrapper">
 
@@ -16,7 +16,9 @@
   <div class="module-title"><h1>Maps</h1>
   </div>
   <div class="module-maps">
-<iframe src="https://snazzymaps.com/embed/7806" width="350px" height="350px" style="border:none;"></iframe>
+
+    <div id="map_canvas" style="width:350px; height:350px"></div>
+
   </div>
   </section>
 
@@ -26,11 +28,10 @@
       <br/>Longitude
     </p>
     <p>
-      <input placeholder="Latitude" class="location-input" type="text">
-    </input>
-      <br/>
-    <input  placeholder="Longitude" class="location-input"  type="text">
-  </input>
+      <div id="latlong">
+      <input class="location-input" size="20" type="text" id="latbox" name="lat" ></p>
+      <input class="location-input" size="20" type="text" id="lngbox" name="lng" ></p>
+      </div>
       <p>
         <p>
       <button onclick="sendLocation()" class="init-button"><span class="ion-navigate"></span> Initiate</button>
@@ -85,7 +86,7 @@
   </section>
 
   <section class="module ctrl">
-    <div class="module-title"><h1>Control</h1></div>
+    <div class="module-title"><h1>Move</h1></div>
 
     <nav class="control">
     <ul>
@@ -94,11 +95,20 @@
       <li><a onmousedown="goLeft()" onmouseup="resetVariable()">▲</a></li> <!--  a --->
       <li><a onmousedown="goBackward()" onmouseup="resetVariable()">▲</a></li> <!--  s --->
     </ul>
-    <a class="confirm" href="#">OK</a>
+    <a class="confirm" onmousedown="ok()" onmouseup="resetVariable()">OK</a>
   </nav>
+
+  <div class="status-button">
+    <a onclick="start()">ON</a>  <a onclick="stop()">OFF</a>
+  </div>
 
   </section>
   </div>
+
+  <cfoutput>
+      <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=#YOUR-GOOGLE-API-KEY#&sensor=false"></script>
+  </cfoutput>
+
 
   <script src="script.js"></script>
 
