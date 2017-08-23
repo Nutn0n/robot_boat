@@ -1,13 +1,5 @@
 <?php
-
-  $host = "localhost";
-  $user = "root";
-  $pass = "";
-  $db   = "robot_boat";
-
-  mysql_connect($host, $user, $pass) or die("Could not connect to database");
-  mysql_select_db($db) or die("Could not connect to database");
-  mysql_query("SET NAMES utf8");
+  include("connect.php");
 
   $forward   = $_POST['forward'];
   $backward  = $_POST['backward'];
@@ -30,5 +22,5 @@
             `on`='$on',
             `off`='$off'
              WHERE no='1'";
-  $result = mysql_query($sql);
+  $result = mysqli_query($con,$sql);
 ?>

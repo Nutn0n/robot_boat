@@ -1,14 +1,5 @@
-
 <?php
-	
-  $host = "localhost";
-  $user = "root";
-  $pass = "";
-  $db   = "robot_boat";
-
-  @mysql_connect($host, $user, $pass) or die("Could not connect to database");
-  @mysql_select_db($db) or die("Could not connect to database");
-  @mysql_query("SET NAMES utf8");
+  include("connect.php");
 
   $DDATE     = date('Y-m-d h:i:s');
   @$ESP8266   = $_GET['esp8266'];
@@ -32,6 +23,6 @@
   }
 
   $sql    = "UPDATE boat_final SET `pH`='$PH',`DO`='$DO',`Turbidity`='$TUR',`latitude_last`='$LATITUDE',`longitude_last`='$LONGITUDE',`date/time`='$DDATE' WHERE no='1'";
-  $result = mysql_query($sql);
+  $result = mysqli_query($con,$sql);
 
 ?>

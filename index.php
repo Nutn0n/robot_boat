@@ -1,19 +1,15 @@
-﻿<?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "robot_boat";
-
-@mysql_connect($host, $user, $pass) or die("Could not connect to database");
-@mysql_select_db($db) or die("Could not connect to database");
-@mysql_query("SET NAMES utf8");
-
+<?php
+include("connect.php");
 //ส่งกลับไป
 $sql    = "SELECT * FROM boat_final WHERE no='1'";
-$result = mysql_query($sql);
-$row    = mysql_fetch_assoc($result);
+$result = mysqli_query($con,$sql);
+$row    = mysqli_fetch_assoc($result);
 
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -53,26 +49,23 @@ $row    = mysql_fetch_assoc($result);
             </div>
          </section>
          <section class="module video">
-            <iframe width="350" height="350" style="position:absolute; margin-left:-175px;" src="https://www.youtube.com/embed/u2AitrqGybs" frameborder="0" allowfullscreen></iframe>
+            <iframe width="350" height="350" style="position:absolute; margin-left:-175px;" src="https://www.youtube.com/embed/XbVFvllQPzg?&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
          </section>
          <section class="module ph">
             <div class="module-title">
                <h1>pH</h1>
             </div>
             <div class="module-graph">
-               <svg viewBox="0 0 500 100" class="chart">
-                  <polyline     fill="none"     stroke="#fff"     stroke-width="2"     points="       00,50       20,50       40,50       60,50       80,50       100,50       120,50       140,50       160,50       180,50       200, 50       220, 50       240, 50       260, 50       280, 50       300, 50       320, 50       340, 50"   />
-               </svg>
+              <canvas id="myChartPH" style="height: 270px; width: 350px;background-color:#141414;"></canvas>
             </div>
+
          </section>
          <section class="module do">
             <div class="module-title">
                <h1>Oxygen</h1>
             </div>
             <div class="module-graph">
-               <svg viewBox="0 0 500 100" class="chart">
-                  <polyline     fill="none"     stroke="#fff"     stroke-width="2"     points="       00,50       20,50       40,50       60,50       80,50       100,50       120,50       140,50       160,50       180,50       200, 50       220, 50       240, 50       260, 50       280, 50       300, 50       320, 50       340, 50"   />
-               </svg>
+               <canvas id="myChartOxygen" style="height: 270px; width: 350px;background-color:#141414;"></canvas>
             </div>
          </section>
          <section class="module tur">
@@ -80,9 +73,7 @@ $row    = mysql_fetch_assoc($result);
                <h1>Turbidity</h1>
             </div>
             <div class="module-graph">
-               <svg viewBox="0 0 500 100" class="chart">
-                  <polyline     fill="none"     stroke="#fff"     stroke-width="2"     points="       00,50       20,50       40,50       60,50       80,50       100,50       120,50       140,50       160,50       180,50       200, 50       220, 50       240, 50       260, 50       280, 50       300, 50       320, 50       340, 50"   />
-               </svg>
+               <canvas id="myChartTUR" style="height: 270px; width: 350px;background-color:#141414;"></canvas>
             </div>
          </section>
          <section class="module warn">
@@ -102,7 +93,7 @@ $row    = mysql_fetch_assoc($result);
             </div>
          </section>
          <section class="module video">
-            <iframe style="position:absolute; margin-left:-175px;" width="350" height="350" src="https://www.youtube.com/embed/apfXcSN777E?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <iframe style="position:absolute; margin-left:-175px;" width="350" height="350" src="https://www.youtube.com/embed/4zZnvenYbFU?&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
          </section>
          <section class="module ctrl">
             <div class="module-title">
@@ -132,3 +123,123 @@ $row    = mysql_fetch_assoc($result);
       <script src="script.js"></script>
    </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+<script>
+var ctx = document.getElementById("myChartPH");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["11:12", "11:13", "11:14", "11:15", "11:16", "11:17"],
+        datasets: [{
+            label: 'PH',
+            data: [6, 2, 7, 2, 4, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+ </script>
+
+ <script>
+ var ctx = document.getElementById("myChartOxygen");
+ var myChart = new Chart(ctx, {
+     type: 'line',
+     data: {
+         labels: ["11:12", "11:13", "11:14", "11:15", "11:16", "11:17"],
+         datasets: [{
+             label: 'Oxygen',
+             data: [20, 2, 7, 2, 4, 3],
+             backgroundColor: [
+                 'rgba(255, 99, 132, 0.2)',
+                 'rgba(54, 162, 235, 0.2)',
+                 'rgba(255, 206, 86, 0.2)',
+                 'rgba(75, 192, 192, 0.2)',
+                 'rgba(153, 102, 255, 0.2)',
+                 'rgba(255, 159, 64, 0.2)'
+             ],
+             borderColor: [
+                 'rgba(255,99,132,1)',
+                 'rgba(54, 162, 235, 1)',
+                 'rgba(255, 206, 86, 1)',
+                 'rgba(75, 192, 192, 1)',
+                 'rgba(153, 102, 255, 1)',
+                 'rgba(255, 159, 64, 1)'
+             ],
+             borderWidth: 1
+         }]
+     },
+     options: {
+         scales: {
+             yAxes: [{
+                 ticks: {
+                     beginAtZero: true
+                 }
+             }]
+         }
+     }
+ });
+  </script>
+
+  <script>
+  var ctx = document.getElementById("myChartTUR");
+  var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: ["11:12", "11:13", "11:14", "11:15", "11:16", "11:17"],
+          datasets: [{
+              label: 'Turbidity',
+              data: [100, 2, 7, 2, 4, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
+   </script>
