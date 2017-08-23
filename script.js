@@ -9,50 +9,72 @@ q e r = ok, start, stop
 var  setLocation = 0;
 var w,a,s,d = 0;
 
-
+function updateControl(FW,BW,R,L,OK,ON,OFF,LAT,LONG){
+  $.ajax({
+        url: "update_index.php",
+        type: "POST",
+        data: "{'forward':"+FW+",'backward':"+BW+",'righ':"+R+",'left':"+L+",'ok':"+OK+",'on':"+ON+",'off':"+OFF+",'lat':"+LAT+",'long':"+LONG+"}",
+        data: "forward="+FW+"&backward="+BW+"&righ="+R+"&left="+L+"&ok="+OK+"&on="+ON+"&off="+OFF+"&lat="+LAT+"&long="+LONG,
+        cache: false,
+        async:false,
+        success: function(data){
+          //alert(data);
+        }
+    });
+}
 
 sendLocation = function(){
   /* Function goes here */
   alert("user set location to "+myLatlng);
+  updateControl(0,0,0,0,0,0,0,parseFloat($('#latbox').val()),parseFloat($('#lngbox').val()));
+  alert(parseFloat($('#latbox').val()));
 }
 
 goLeft = function() {
   a = 4;
   /* or do something */
+  updateControl(0,0,0,a,0,0,0,0,0);
 }
 
 
 goRight = function () {
   d = 2;
     /* or do something */
+  updateControl(0,0,d,0,0,0,0,0,0);
 }
 
 
 goFoward = function() {
   w = 1;
     /* or do something */
+  updateControl(w,0,0,0,0,0,0,0,0);
 }
 
 
 goBackward = function () {
   s = 3;
     /* or do something */
+  updateControl(0,s,0,0,0,0,0,0,0);
 }
 
 ok = function () {
   q = 5;
     /* or do something */
+  updateControl(0,0,0,0,q,0,0,0,0);
 }
+
 start = function () {
   e = 6;
   alert("start");
     /* or do something */
+  updateControl(0,0,0,0,0,e,0,0,0);
 }
 
 stop = function () {
   r = 7;
     alert("stop");
     /* or do something */
+  updateControl(0,0,0,0,0,0,r,0,0);
 }
 
 resetVariable = function() {
@@ -63,6 +85,7 @@ resetVariable = function() {
   q = 0;
   e = 0;
   r = 0;
+  updateControl(0,0,0,0,0,0,0,0,0);
 }
 
 /* Maps */
